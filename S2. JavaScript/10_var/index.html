@@ -5,10 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aprendiendo React Js</title>
 </head>
-<body>
-  <h1>Introducción Js</h1>
-  <div class="app"></div>
-  <script src="app.js"></script>
-  <script src="scope.js"></script>
+<body id="body">
+  <h1>Introducción <span class="yellow">JS</span></h1>
+  <div id="app"></div>
+  
+  <div id="scripts"></div>
+  <script src="/scripts/modulos.js" type="module"></script>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: sans-serif;
+    }
+    .yellow {background-color: #f8e117 !important; color: black; padding: 10px 5px 0px 14px}
+  </style>
+  
 </body>
 </html>
