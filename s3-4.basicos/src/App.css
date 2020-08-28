@@ -1,0 +1,15 @@
+#react {
+  font-family: sans-serif;
+}
+
+.carrito{
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  width: 400px;
+}
+
+#footer{
+  position: fixed;
+  bottom: 0
+}
