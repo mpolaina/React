@@ -22,7 +22,7 @@ function App() {
       } else {
         localStorage.setItem('citas', JSON.stringify([]))
       }
-  }, [citas, guardarCitas]) // se usa [vacio] para que se pase 1 vez
+  }, [citas, citasIniciales]) // se usa [vacio] para que se pase 1 vez
   
   // Función citas actuales + nueva cita
   const crearCita = cita => {

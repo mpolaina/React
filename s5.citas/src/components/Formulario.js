@@ -11,7 +11,7 @@ const Formulario = ({crearCita}) => {
       apellido: '',
       fecha: '',
       hora: '',
-      sintomas: ''
+      descripcion: ''
   })
   // STATE para error en validación
   const [error, actualizarError] = useState(false)
@@ -24,13 +24,13 @@ const Formulario = ({crearCita}) => {
       })
   }
   // Extraer los valores con destructuring para no usar this.
-  const {nombre, apellido, fecha, hora, sintomas} = cita
+  const {nombre, apellido, fecha, hora, descripcion} = cita
   
   // Enviar formulario
   const submitCita = e => {
       e.preventDefault();
       // Validar
-      if(nombre.trim() === '' || apellido.trim() === '' || fecha.trim() === '' || hora.trim() === '' || sintomas.trim() === ''){
+      if(nombre.trim() === '' || apellido.trim() === '' || fecha.trim() === '' || hora.trim() === '' || descripcion.trim() === ''){
         actualizarError(true)
         return // para que no siga ejecutando
       }
@@ -46,7 +46,7 @@ const Formulario = ({crearCita}) => {
         apellido: '',
         fecha: '',
         hora: '',
-        sintomas: ''
+        descripcion: ''
       })
   }
   
@@ -90,16 +90,16 @@ const Formulario = ({crearCita}) => {
               onChange={actualizarState}
               value={hora}
           />
-          <label>Síntomas</label>
+          <label>Descripción</label>
           <textarea
               className="u-full-width"
-              name="sintomas"
+              name="descripcion"
               onChange={actualizarState}
-              value={sintomas}
+              value={descripcion}
           ></textarea>
           <button
               type="submit"
-              className="u-full-width button-primary"
+              className="u-full-width button-primario"
           >Agregar Cita</button>
         
       </form>

@@ -58,29 +58,51 @@ input[type="time"] {
   background: white;
   border-bottom: 1px solid #e1e1e1;
   color: black;
+  border-radius: 0.5rem;
+  margin-bottom: 12px;
 }
 
 .cita p {
   font-weight: bold;
-  margin-bottom: .8rem;
+  margin-bottom: .5rem;
 }
 .cita p span {
   font-weight: normal;
 
 }
-.cita:first-of-type {
+/* .cita:first-of-type {
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
 }
 .cita:last-of-type {
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
+} */
+.button.eliminar {
+  background-color: #fddb92;
+  color: #4596b2;
+  margin-top: 2rem;
+  border: none;
 }
-.button.eliminar,
 .button.eliminar:hover {
-  background-color: #c10059;
+  background-color: #fddb92;
   color: white;
   margin-top: 2rem;
+  border: none;
+}
+.button-primario
+ {
+  background-color: #4596b2;
+  color: white;
+  margin-top: 2rem;
+  border: none;
+}
+.button-primario:hover
+ {
+  background-color: #4596b2;
+  color: #fddb92;
+  margin-top: 2rem;
+  border: none;
 }
 
 .alerta-error {
