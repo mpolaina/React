@@ -5,7 +5,7 @@ import Listado from './components/Listado'
 import Disponible from './components/Disponible'
 
 function App() {
-  
+
   // Definir el ppto y el restante  
   const [presupuesto, setPresupuesto] = useState(0)
   const [disponible, setDisponible] = useState(0);
@@ -18,8 +18,8 @@ function App() {
   
   // UseEffect que actualiza el disponible
   useEffect(()=> {
+    
       if(vergasto){
-        
         // Agrega el nuevo gasto
         setGastos([
           ...gastos,
@@ -33,6 +33,7 @@ function App() {
         // Resetear a false
         setVergasto(false)
       }
+      
   }, [gasto, vergasto, disponible, gastos])
     
   return (
