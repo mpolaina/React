@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
+import { obtenerDiferenciaYear, calcularMarca, obtenerPlan } from '../helper'
 
 const Campo = styled.div`
     display: flex;
@@ -8,7 +10,7 @@ const Campo = styled.div`
 `
 
 const Label = styled.label`
-    flex: 0 0 100px;
+    flex: 0 0 80px;
 `
 const Select = styled.select`
     display: block;
@@ -18,7 +20,7 @@ const Select = styled.select`
     -webkit-appearance: none;
 `
 const InputRadio = styled.input`
-    margin: 0 1rem;
+    margin: 0 .5rem;
 `
 const Boton = styled.button`
     background-color: #00838f;
@@ -38,7 +40,6 @@ const Boton = styled.button`
         background-color: #26c6da;
     }
 `
-
 const Error = styled.div`
     background-color: red;
     color: white;
@@ -48,7 +49,8 @@ const Error = styled.div`
     margin-bottom: 2rem;
 `
 
-const Formulario = () => {
+// COMPONENTE ========================================
+const Formulario = ({ setResumen, setCargando}) => {
     // STATE DATOS
     const [datos, setDatos] = useState({
         marca: '',
@@ -69,28 +71,51 @@ const Formulario = () => {
         })
     }
     
-    // Cuando el usuario presiona submit (cotizar)
+    // COTIZAR == Cuando el usuario presiona submit (cotizar)
     const cotizarSeguro = e => {
         e.preventDefault();
         
+        // VALIDAR FORMULARIO
         if(marca.trim() === '' || year.trim() === '' || plan.trim() === ''){
           setError(true)
           return
         }
         setError(false)
         
+        // BASE DE 2000
+        let resultado = 2000
+        
         // obtener diferencia de años
+        const diferencia = obtenerDiferenciaYear(year)
+        console.log(diferencia)
         
         // cada año hay que restar un 3%
+        resultado -= (( diferencia * 3 ) * resultado ) / 100
+        console.log(resultado)
         
-        // Americano 15%
-        // Asiático 5%
-        // Europeo 30%
+        // Americano +15%
+        // Asiático +5%
+        // Europeo +30%
+        resultado = calcularMarca(marca) * resultado
+        console.log(resultado)
         
         // Básico aumenta 20%
         // Completo 50%
+        const incrementoPlan = obtenerPlan(plan)
+        resultado = parseFloat( incrementoPlan * resultado ).toFixed(2)
         
-        // Total
+        // Cargar spinner y resumen datos
+        setCargando(true)
+        setTimeout(() => {
+            // Elimina spiner
+            setCargando(false)  
+            // Mostramos info en el componente principal
+            setResumen({
+              cotizacion: Number(resultado),
+              datos
+            })
+        }, 2000);
+        
     }
     
     return ( 
@@ -99,7 +124,7 @@ const Formulario = () => {
         >
             { error ? <Error>Todos los campos requeridos</Error> : null}
             <Campo>
-                <Label>Marca</Label>
+                <Label>Modelo</Label>
                 <Select
                     name="marca"
                     value={marca}
@@ -136,8 +161,8 @@ const Formulario = () => {
                 <InputRadio 
                     type="radio"
                     name="plan"
-                    value="basico"
-                    checked={plan === 'basico'}
+                    value="básico"
+                    checked={plan === 'básico'}
                     onChange={obtenerInformacion}
                 /> Básico
                 <InputRadio 
@@ -153,5 +178,10 @@ const Formulario = () => {
       
      );
 }
- 
+
+Formulario.propTypes = {
+  setResumen: PropTypes.func.isRequired, 
+  setCargando: PropTypes.func.isRequired
+}
+
 export default Formulario;
