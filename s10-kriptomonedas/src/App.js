@@ -10,8 +10,7 @@ const Contenedor = styled.div`
     max-width: 900px;
     margin: 0 auto;
     padding: 0 12px 12px;
-    position: absolute;
-    bottom: 0px;
+    
     @media (min-width: 992px){
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -82,6 +81,9 @@ function App() {
         setTimeout(() => {
           setcargando(false)
           setresultado(resultado.data.DISPLAY[criptomoneda][moneda])
+          var element = document.getElementById('logo'); 
+          element.style.display = "none";
+          console.log('Parriba')
         }, 2000);
         
     }
@@ -98,9 +100,10 @@ function App() {
            <Imagen
               src={imagen}
               alt="imagen criptomonedas"
+              id="logo"
            />  
         </div>
-        <div>
+        <div id="lateralIzq">
             
             <Heading>Cotiza tus criptomonedas al instante</Heading>
             <Formulario

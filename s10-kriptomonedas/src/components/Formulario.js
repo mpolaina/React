@@ -42,10 +42,10 @@ const Formulario = ({setmoneda, setcriptomoneda}) => {
       {codigo: 'GBP', nombre: 'Libra esterlina'},
   ]
   // Utilizar el hook useMoneda
-  const [moneda, SelectMonedas] = useMoneda('Moneda', '', MONEDAS);
+  const [moneda, SelectMonedas] = useMoneda('Monedas', '', MONEDAS);
   
   // Utilizar el hook useCriptomoneda
-  const [criptomoneda, SelectCripto] = useCriptomoneda('Cryptomoneda', '', listacripto)
+  const [criptomoneda, SelectCripto] = useCriptomoneda('Cryptomonedas', '', listacripto)
   
   // Ejecutar llamada a la API
   useEffect(() => {

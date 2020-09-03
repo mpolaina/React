@@ -11,13 +11,13 @@ const DivCotizacion = styled.div`
 const Precio = styled.p`
     color: black;
     font-family: 'Oswald', sans-serif;
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 400;
     margin: 12px;
     text-align: right;
     span {
       font-weight: 700;
-      font-size: 2.2rem;
+      font-size: 2rem;
       color: #326ac0;
     }
 `
@@ -37,7 +37,7 @@ const Datos = styled.p`
 const Cotizacion = ({resultado}) => {
   
   if(Object.keys(resultado).length === 0) return null
-  console.log(resultado)
+  //console.log(resultado)
   return ( 
       <DivCotizacion>
         <Precio>El precio es: <span>{resultado.PRICE}</span></Precio>
