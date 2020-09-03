@@ -14,8 +14,8 @@ function App() {
     const consultarAPI = async () => {
       const url = `http://newsapi.org/v2/top-headlines?country=it&category=${categoria}&apiKey=0fb8c077ead6418284cc49a18b9c04b9`
       const respuesta = await fetch(url)
-      const noticias = await respuesta.json()
-      setNoticias(noticias.articles)
+      const resultado = await respuesta.json()
+      setNoticias(resultado.articles)
     }
     consultarAPI()
   }, [categoria])

@@ -6,6 +6,7 @@ const DivCotizacion = styled.div`
     background-color: white;
     padding: 1rem;
     margin-top: 1rem;
+    margin-bottom: 3rem;
     border-radius: 12px;
 `
 const Precio = styled.p`

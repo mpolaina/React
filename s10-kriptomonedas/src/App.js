@@ -81,9 +81,9 @@ function App() {
         setTimeout(() => {
           setcargando(false)
           setresultado(resultado.data.DISPLAY[criptomoneda][moneda])
-          var element = document.getElementById('logo'); 
-          element.style.display = "none";
-          console.log('Parriba')
+          // Scroll hacia abajo al obtener cotización
+          const pabajo = document.querySelector('#abajo')
+          pabajo.scrollIntoView({ behavior: 'smooth'})
         }, 2000);
         
     }
@@ -103,14 +103,16 @@ function App() {
               id="logo"
            />  
         </div>
-        <div id="lateralIzq">
+        <div>
             
-            <Heading>Cotiza tus criptomonedas al instante</Heading>
+            <Heading>Cotiza tus criptomonedas</Heading>
             <Formulario
                 setmoneda={setmoneda}
                 setcriptomoneda={setcriptomoneda}
             />
-            {componente}
+            <div id="abajo">
+              {componente}
+            </div>
             
         </div>
     </Contenedor>

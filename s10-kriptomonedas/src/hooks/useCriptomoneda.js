@@ -8,7 +8,7 @@ const Label = styled.label`
     font-weight: 200;
     font-size: 2rem;
     letter-spacing: 2px;
-    margin: 2rem 0 1rem;
+    margin: 2rem 0 .4rem;
     display: block;
     
     @media (max-width: 600px){
