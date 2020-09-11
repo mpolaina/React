@@ -161,6 +161,7 @@ module.exports = {
       'gradient-to-bl': 'linear-gradient(to bottom left, var(--gradient-color-stops))',
       'gradient-to-l': 'linear-gradient(to left, var(--gradient-color-stops))',
       'gradient-to-tl': 'linear-gradient(to top left, var(--gradient-color-stops))',
+      'pattern': "url('bubbles.svg')",
     },
     gradientColorStops: theme => theme('colors'),
     backgroundOpacity: theme => theme('opacity'),
@@ -289,6 +290,7 @@ module.exports = {
       ...theme('spacing'),
       full: '100%',
       screen: '100vh',
+      content: 'fit-content'
     }),
     inset: {
       '0': '0',

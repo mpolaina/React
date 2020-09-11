@@ -3521,6 +3521,10 @@ video {
   background-image: linear-gradient(to top left, var(--gradient-color-stops));
 }
 
+.bg-pattern {
+  background-image: url('bubbles.svg');
+}
+
 .from-transparent {
   --gradient-from-color: transparent;
   --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(0, 0, 0, 0));
@@ -10265,6 +10269,11 @@ video {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-content {
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .text-xs {
@@ -21588,6 +21597,10 @@ video {
     background-image: linear-gradient(to top left, var(--gradient-color-stops));
   }
 
+  .sm\:bg-pattern {
+    background-image: url('bubbles.svg');
+  }
+
   .sm\:from-transparent {
     --gradient-from-color: transparent;
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(0, 0, 0, 0));
@@ -28332,6 +28345,11 @@ video {
 
   .sm\:h-screen {
     height: 100vh;
+  }
+
+  .sm\:h-content {
+    height: -moz-fit-content;
+    height: fit-content;
   }
 
   .sm\:text-xs {
@@ -39625,6 +39643,10 @@ video {
     background-image: linear-gradient(to top left, var(--gradient-color-stops));
   }
 
+  .md\:bg-pattern {
+    background-image: url('bubbles.svg');
+  }
+
   .md\:from-transparent {
     --gradient-from-color: transparent;
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(0, 0, 0, 0));
@@ -46369,6 +46391,11 @@ video {
 
   .md\:h-screen {
     height: 100vh;
+  }
+
+  .md\:h-content {
+    height: -moz-fit-content;
+    height: fit-content;
   }
 
   .md\:text-xs {
@@ -57662,6 +57689,10 @@ video {
     background-image: linear-gradient(to top left, var(--gradient-color-stops));
   }
 
+  .lg\:bg-pattern {
+    background-image: url('bubbles.svg');
+  }
+
   .lg\:from-transparent {
     --gradient-from-color: transparent;
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(0, 0, 0, 0));
@@ -64406,6 +64437,11 @@ video {
 
   .lg\:h-screen {
     height: 100vh;
+  }
+
+  .lg\:h-content {
+    height: -moz-fit-content;
+    height: fit-content;
   }
 
   .lg\:text-xs {
@@ -75699,6 +75735,10 @@ video {
     background-image: linear-gradient(to top left, var(--gradient-color-stops));
   }
 
+  .xl\:bg-pattern {
+    background-image: url('bubbles.svg');
+  }
+
   .xl\:from-transparent {
     --gradient-from-color: transparent;
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(0, 0, 0, 0));
@@ -82443,6 +82483,11 @@ video {
 
   .xl\:h-screen {
     height: 100vh;
+  }
+
+  .xl\:h-content {
+    height: -moz-fit-content;
+    height: fit-content;
   }
 
   .xl\:text-xs {

@@ -20,33 +20,35 @@ const Formulario = ({setBusqueda}) => {
       setBusqueda(termino)   
   }
   
+  
   return (  
     
-    <form
-        onSubmit={buscarImagenes}
-        className='max-w-screen-md mx-auto'
-    >
-        
-          <div className='flex items-center border-b border-teal-500 py-2'>
+        <form
+            onSubmit={buscarImagenes}
+            className='w-full max-w-screen-sm mx-auto px-3'
+        >
+          <div className='flex item-center border-b border-teal-500 py-2'>
               <input
                   type='text'
-                  className='appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none'
-                  placeholder='Busca una imagen, pero no con mil palabras! ;)'
+                  autoFocus
+                  className='appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 text-xl leading-loose focus:outline-none'
+                  placeholder='¿Qué buscas?'
                   onChange={ e => setTermino(e.target.value)}
+                  
               />
               <button 
-                  className="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"
+                  className='-ml-5 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 border-4 text-white py-0 px-5 rounded'
                   type='submit'
               >
                 Buscar
               </button>
-          </div>
           
+           </div>
           { error ? <Error mensaje='Debes introducir un término de búsqueda'/> : null}
-        
-    </form>
+            
+        </form>
     
-  
+     
   );
 }
  
