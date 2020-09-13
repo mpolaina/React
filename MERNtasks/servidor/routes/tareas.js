@@ -28,4 +28,10 @@ router.put('/:id',
     tareaController.actualizarTarea
 )
 
+// ELIMINAR TAREA
+router.delete('/:id',
+    auth,
+    tareaController.eliminarTarea
+)
+
 module.exports = router; 

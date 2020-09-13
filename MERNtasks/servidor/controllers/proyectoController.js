@@ -55,7 +55,6 @@ exports.actualizarProyecto = async (req, res) => {
       }
       
       try {
-        
           // revisar el ID
           let proyecto = await  Proyecto.findById(req.params.id)
           
@@ -71,7 +70,6 @@ exports.actualizarProyecto = async (req, res) => {
           
           // actualizar
           proyecto = await Proyecto.findByIdAndUpdate({ _id : req.params.id }, { $set : nuevoProyecto }, { new: true})
-          
           res.json({ proyecto })
         
       } catch (error) {
@@ -84,7 +82,6 @@ exports.actualizarProyecto = async (req, res) => {
 exports.eliminarProyecto = async(req, res) => {
   
       try {
-          
           // revisar el ID
           let proyecto = await  Proyecto.findById(req.params.id)
           
