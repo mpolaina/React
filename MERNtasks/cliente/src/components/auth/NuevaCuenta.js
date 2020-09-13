@@ -1,8 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom'
+import alertaContext from '../../context/alertas/alertaContext'
+import authContext from '../../context/autenticacion/authContext'
 
-const NuevaCuenta = () => {
+const NuevaCuenta = (props) => {
   
+    // Extraer valores del alertContext
+    const contextalerta = useContext(alertaContext);
+    const { alerta, mostrarAlerta } = contextalerta
+    
+    // Extraer valores del authContext
+    const contextauth = useContext(authContext);
+    const { mensaje, autenticado, registrarUsuario } = contextauth
+    
+    // Si el usuario está registrado/autenticado
+    useEffect(() => {
+        if(autenticado) {
+            props.history.push('/proyectos')
+        }
+        if(mensaje) {
+            mostrarAlerta(mensaje.msg, mensaje.categoria)
+        }
+    }, [mensaje, autenticado, props.history])
+    
     // State para iniciar sesión
     const [usuario, guardarUsuario] = useState({
         nombre: '',
@@ -23,19 +43,36 @@ const NuevaCuenta = () => {
   
     // Cuando se inicia sesión
     const onSubmit = e => {
-      e.preventDefault();
+        
+        e.preventDefault();
+        
+        // Validación campos rellenos
+        if ( nombre.trim() === '' || email.trim() === '' || password.trim() === '' || confirmar.trim() === '' ) {
+            mostrarAlerta('Todos los campos requeridos', 'alerta-error')
+            return
+        }
+        // Password minimo 6 caracteres
+        if ( password.length < 6 ) {
+            mostrarAlerta('Password mínimo 6 caracteres', 'alerta-error')
+            return
+        }
+        // Passwords iguales
+        if ( password !== confirmar) {
+            mostrarAlerta('Password no coincide', 'alerta-error')
+            return
+        }
+        // Pasarlo al action
+        registrarUsuario({
+            nombre,
+            email,
+            password
+        })
       
-      // Validación campos rellenos
-      
-      // Password minimo 6 caracteres
-      
-      // Passwords iguales
-      
-      // Pasarlo al action
     }
     
     return (  
       <div className='form-usuario'>
+          { alerta ? ( <div className={`alerta ${alerta.categoria}`}>{alerta.msg}</div> ) : null}
           <div className='contenedor-form sombra-dark'>
               <h1>Obtener una cuenta</h1>
               

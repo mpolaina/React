@@ -1,12 +1,16 @@
 // CONEXIÓN A LA BD Y CONFIGURACIÓN GENERAL DE MONGOOSE
 const express = require('express');
 const conectarDB = require('./config/db')
+const cors = require('cors')
 
 // crear el servidor
 const app = express();
 
 // Conectar a la base de datos
 conectarDB()
+
+// Habilitar cors para conexion al servidor desde un origen distinto
+app.use(cors())
 
 // Habilitar express.json
 app.use( express.json({ extended: true }) )
