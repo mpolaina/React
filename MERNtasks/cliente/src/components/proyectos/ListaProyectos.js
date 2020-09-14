@@ -22,7 +22,7 @@ const ListadoProyectos = () => {
         mostrarAlerta(mensaje.msg, mensaje.categoria)
       }
       obtenerProyectos()
-      
+      // eslint-disable-next-line
     }, [mensaje])
     
     // Revisar si proyectos tiene contenido

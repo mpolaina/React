@@ -9,6 +9,7 @@ const RutaPrivada = ({ component: Component, ...props}) => {
     // Llamamos a obtenerUsuario para que al recargar no pasa autenticado: null 
     useEffect(() => {
         obtenerUsuario()
+        // eslint-disable-next-line
     }, [])
   
     return (  
