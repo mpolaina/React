@@ -1,17 +1,25 @@
 import React, { useContext } from 'react';
 import { FiEdit, FiTrash } from "react-icons/fi";
+import proyectoContext from '../../context/proyectos/proyectoContext'
 import tareaContext from '../../context/tareas/tareaContext'
 
 const Tarea = ({tarea}) => {
+    
+    // Extraer si un proyecto está activo
+    const proyectocontext = useContext(proyectoContext)
+    const { proyecto } = proyectocontext
     
     // obtenemos funciones del tareaContext
     const tareasContext = useContext(tareaContext)
     const { eliminarTarea, obtenerTareas, estadoTarea, guardarTareaActual } = tareasContext
     
+    // Extraer proyecto actual
+    const [ proyectoActual ] = proyecto
+    
     // Fn ELIMINAR tarea
     const eliminar = id => {
-      eliminarTarea(id)
-      obtenerTareas(tarea.proyectoId)
+      eliminarTarea(id, proyectoActual._id)
+      obtenerTareas(proyectoActual.id)
     }
     
     // Fn modificar estado tarea
@@ -67,7 +75,7 @@ const Tarea = ({tarea}) => {
                 <button
                     type='button'
                     className='btn btn-warning-outline'
-                    onClick={() => eliminar(tarea.id)}
+                    onClick={() => eliminar(tarea._id)}
                 ><FiTrash/></button>
             </div>
         </li>

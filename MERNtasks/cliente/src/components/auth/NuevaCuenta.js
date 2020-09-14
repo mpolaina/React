@@ -21,6 +21,7 @@ const NuevaCuenta = (props) => {
         if(mensaje) {
             mostrarAlerta(mensaje.msg, mensaje.categoria)
         }
+        
     }, [mensaje, autenticado, props.history])
     
     // State para iniciar sesión
