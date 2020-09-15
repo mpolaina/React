@@ -38,7 +38,7 @@ const ListadoProyectos = () => {
                 {proyectos.map(proyecto => (
                     <CSSTransition
                         key={proyecto._id}
-                        timeout={800}
+                        timeout={500}
                         classNames='proyecto'
                     >
                         <Proyecto

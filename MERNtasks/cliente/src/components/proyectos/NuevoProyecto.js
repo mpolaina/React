@@ -66,7 +66,7 @@ const NuevoProyecto = () => {
                           />
                           <input
                               type='submit'
-                              className='btn btn-block btn-primario'
+                              className='btn btn-block btn-secundario-outline'
                               value='Agregar proyecto'
                           />
                         </form>  

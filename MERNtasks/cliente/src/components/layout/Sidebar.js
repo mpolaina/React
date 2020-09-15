@@ -7,12 +7,12 @@ const Sidebar = () => {
       <aside>
           <h1>MP<span>tasks</span></h1>
           
-          <NuevoProyecto/>
           
           <div className='proyectos'>
               <h2>Tus proyectos</h2>
           </div>
           <ListaProyectos/>
+          <NuevoProyecto/>
       </aside>
   );
 }

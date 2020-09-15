@@ -23,10 +23,10 @@ const Proyectos = () => {
             <Header/>
             <main>
                 <FormTarea/>
-              
                 <div className='contenedor-tareas'>
                     <ListaTareas/>
                 </div>
+              
             </main>
         </div>
         

@@ -27,7 +27,7 @@ body {
 h1, h2 {
   font-family: var(--headingFont);
   font-weight: 900;
-  margin: 0 0 4rem 0;
+  margin: 0 0 2rem 0;
   text-align: center;
   color: var(--gris2);
 }
@@ -51,6 +51,10 @@ a {
   color: var(--gris2);
 }
 
+.mt-3 {
+    margin-top: 3rem !important; 
+}
+
 /** BOTONES **/
 .btn {
   margin-top: 2rem;
@@ -62,6 +66,7 @@ a {
   border: none;
   transition: background-color .3s ease;
   outline: none;
+  text-align: center;
 }
 .btn:hover {
   cursor: pointer;
@@ -70,6 +75,7 @@ a {
 .btn-primario:hover { background: var(--gris3); }
 .btn-secundario { background-color: var(--gris1); }
 .btn-secundario-outline { background-color: white; border: 1px solid var(--gris2); color: var(--gris2);}
+.btn-secundario-outline:hover{background-color: var(--gris2); color: var(--blanco);}
 .btn-warning-outline { background-color: white; border: 1px solid #f56565; color: #f56565; }
 .btn-primario:hover { background: var(--gris3); }
 
@@ -134,7 +140,7 @@ aside  {
 }
 
 .formulario-nuevo-proyecto {
-  margin-top: 6rem;
+  margin-top: 3rem;
 }
 .formulario-nuevo-proyecto .input-text {
   border-bottom: 1px solid var(--gris2);
@@ -145,7 +151,10 @@ aside  {
   color: var(--gris2);
 }
 .proyectos {
-  margin-top: 10rem;
+  margin-top: 6rem;
+}
+.listado-proyectos {
+  margin-bottom: 4rem;
 }
 .listado-proyectos li {
   margin-bottom: 1rem;

@@ -23,7 +23,7 @@ const ListaTareas = () => {
   
     return (  
         <Fragment>
-            <h2>Proyecto: {proyectoActual.nombre}</h2>
+            <h2>{proyectoActual.nombre}</h2>
             <ul className='listado-tareas'>
                 { tareasproyecto.length === 0
                   ? ( <li className='tarea'><p>No hay tareas</p></li> )
@@ -32,7 +32,7 @@ const ListaTareas = () => {
                       {tareasproyecto.map(tarea => (
                           <CSSTransition
                               key={tarea._id}
-                              timeout={400}
+                              timeout={500}
                               classNames='tarea'
                           >
                               <Tarea
