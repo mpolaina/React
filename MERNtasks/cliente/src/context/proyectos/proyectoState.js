@@ -38,7 +38,8 @@ const ProyectoState = props => {
     // Obtener los proyectos
     const obtenerProyectos = async () => {
         try {
-              const resultado =  await clienteAxios.get('/api/proyectos')          
+              const resultado =  await clienteAxios.get('/api/proyectos')  
+              //console.log(resultado.data.proyectos)        
               dispatch({
                 type: OBTENER_PROYECTOS,
                 payload: resultado.data.proyectos

@@ -28,12 +28,10 @@ const TareaState = props => {
     
     // Obtener las tareas de un proyecto
     const obtenerTareas = async proyecto => {
-
-        console.log(proyecto);
-
+        //console.log(proyecto);
         try {
-            const resultado = await clienteAxios.get('../api/tareas', { params: { proyecto }});
-            console.log(resultado.data.tareas);
+            const resultado = await clienteAxios.get('/api/tareas', { params: { proyecto }});
+            //console.log(resultado.data.tareas);
             dispatch({
                 type: TAREAS_PROYECTO,
                 payload: resultado.data.tareas

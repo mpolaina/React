@@ -19,7 +19,7 @@ const Tarea = ({tarea}) => {
     // Fn ELIMINAR tarea
     const eliminar = id => {
       eliminarTarea(id, proyectoActual._id)
-      obtenerTareas(proyectoActual.id)
+      obtenerTareas(proyectoActual._id)
     }
     
     // Fn modificar estado tarea

@@ -4,7 +4,6 @@ import authReducer from './authReducer'
 import clienteAxios from '../../config/axios'
 import tokenAuth from '../../config/token'
 
-// eslint-disable-next-line
 import {
   REGISTRO_EXITOSO,
   REGISTRO_ERROR,
@@ -67,7 +66,7 @@ const AuthState = props => {
         
         try {
               const respuesta = await clienteAxios.get('/api/auth')
-              //console.log(respuesta.data)
+              //console.log((respuesta.data.usuario._id))
               dispatch({
                   type: OBTENER_USUARIO,
                   payload: respuesta.data.usuario
@@ -85,6 +84,7 @@ const AuthState = props => {
     const iniciarSesion = async datos => {
         try {
               const respuesta = await clienteAxios.post('/api/auth', datos)
+              
               //console.log(respuesta)
               dispatch({
                   type: LOGIN_EXITOSO,
