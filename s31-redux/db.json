@@ -1,3 +1,19 @@
 {
-  "productos": []
+  "productos": [
+    {
+      "nombre": "Papajotes sin cabo",
+      "precio": 200,
+      "id": 1
+    },
+    {
+      "nombre": "Berenjenas",
+      "precio": 12,
+      "id": 2
+    },
+    {
+      "nombre": "Tapiporlas",
+      "precio": 22,
+      "id": 3
+    }
+  ]
 }

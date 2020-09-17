@@ -158,6 +158,11 @@ export function editarProductoAction(producto) {
         try {
             await clienteAxios.put(`/productos/${producto.id}`, producto)
             dispatch( editarProductoExito(producto))
+            Swal.fire(
+                'Hecho!',
+                'Producto editado con éxito',
+                'success'
+            )
         } catch (error) {
             console.log(error)
             dispatch( editarProductoError() )   

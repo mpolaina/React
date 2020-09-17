@@ -30,7 +30,7 @@ const Productos = () => {
             { cargando ? <p className='text-center'>Cargando...</p> : null}
             
             <table className='table table-stripped'>
-                <thead className='bg-primary table-dark'>
+                <thead className='bg-secondary table-dark'>
                     <tr>
                         <th scope='col'>Nombre</th>
                         <th scope='col'>Precio</th>
