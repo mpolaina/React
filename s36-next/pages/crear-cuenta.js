@@ -1,13 +1,12 @@
 import React from 'react';
 import Layout from '../components/layout/Layout'
 
-
-export default function Nosotros() {
-    return (
+const NuevaCuenta = () => (
         <div>
             <Layout>
-                <h1>Nosotros</h1>
+                <h1>Crear cuenta</h1>
             </Layout>
         </div>
-  )
-}
+)
+
+export default NuevaCuenta
