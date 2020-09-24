@@ -28,7 +28,7 @@ const HabitacionTemplate = ({data: { allDatoCmsHabitacion: { nodes }}}) => {
         <Layout>
             <main
                 css={css`
-                    margin: 0 auto;
+                    margin: 0 auto 3rem;
                     max-width: 1000px;
                     width: 95%;
                 `}
