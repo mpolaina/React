@@ -1,7 +1,7 @@
 import React from 'react';
 import Iconos from './iconos'
 
-const Propiedad = ({propiedad}) => {
+const PropiedadPreview = ({propiedad}) => {
     
     const { nombre, descripcion, imagen, wc, estacionamiento, habitaciones, precio } = propiedad;
     
@@ -21,4 +21,4 @@ const Propiedad = ({propiedad}) => {
     );
 }
  
-export default Propiedad;
+export default PropiedadPreview;

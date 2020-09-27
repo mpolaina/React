@@ -15,11 +15,14 @@ const Iconos = ({ wc, estacionamiento, habitaciones}) => {
             }
           }
     `)
-    console.log(iconos)
+    const imagenesIconos = iconos.edges
     
     return (  
         <ul>
-            <li>{estacionamiento}</li>
+            <li>
+                <img src={imagenesIconos[2].node.publicURL} alt="icono wc"/>
+                <p>{wc}</p>
+            </li>
         </ul>
     );
 }

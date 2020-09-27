@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { css } from '@emotion/core'
 import usePropiedades from '../hooks/usePropiedades'
 import PropiedadPreview from '../components/propiedadPreview'
+import listadoPropiedadesCSS from '../css/listadoPropiedades.module.css'
 
 const ListadoPropiedades = () => {
     
@@ -10,7 +11,7 @@ const ListadoPropiedades = () => {
     
     useEffect(() => {
         setPropiedades(resultado)
-    }, [])
+    }, [resultado])
     
     return (  
         <>
@@ -20,7 +21,7 @@ const ListadoPropiedades = () => {
                 `}
             >Nuestras propiedades</h2>
             
-            <ul>
+            <ul className={listadoPropiedadesCSS.propiedades}>
                 {propiedades.map(propiedad => (
                     <PropiedadPreview
                         key={propiedad.id}
