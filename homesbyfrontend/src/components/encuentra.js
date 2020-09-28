@@ -22,7 +22,7 @@ const Encuentra = () => {
       }
       
     `)
-    console.log(imagen)
+    // console.log(imagen)
     return (  
         <ImageBackground
             tag="section"

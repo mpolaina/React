@@ -12,7 +12,7 @@ const usePropiedades = () => {
                     precio
                     aparcamientos
                     habitaciones
-                    categorias {
+                    categoria {
                         nombre
                     }
                     agentes {
@@ -43,7 +43,7 @@ const usePropiedades = () => {
         precio: propiedad.precio,
         aparcamientos: propiedad.aparcamientos,
         habitaciones: propiedad.habitaciones,
-        categorias: propiedad.categoria,
+        categoria: propiedad.categoria,
         agentes: propiedad.agentes,
     }))
 }

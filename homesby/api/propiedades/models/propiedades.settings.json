@@ -42,7 +42,7 @@
       "plugin": "upload",
       "required": true
     },
-    "categorias": {
+    "categoria": {
       "model": "categorias"
     },
     "agentes": {

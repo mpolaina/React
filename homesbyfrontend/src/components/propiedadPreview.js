@@ -20,8 +20,11 @@ const Boton = styled(Link)`
 
 const Card = styled.div`
     border: 1px solid #e1e1e1;
+    border-radius: 12px;
     img {
         max-width: 100%;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
     }   
 `
 
@@ -35,10 +38,11 @@ const Contenido = styled.div`
     }
     .precio {
         font-size: 2rem;
-        color: cadetblue;
+        color: #4169E1;
         margin: 0;
         font-family: 'Lato', sans-serif;
-        font-weight: 300;
+        font-weight: 400;
+        letter-spacing: 1px;
         line-height: 2rem;
     }
 `
@@ -46,7 +50,7 @@ const Contenido = styled.div`
 
 const PropiedadPreview = ({propiedad}) => {
     
-    const { nombre, descripcion, imagen, wc, aparcamientos, habitaciones, precio } = propiedad;
+    const { nombre, imagen, wc, aparcamientos, habitaciones, precio } = propiedad;
     
     return (  
         
